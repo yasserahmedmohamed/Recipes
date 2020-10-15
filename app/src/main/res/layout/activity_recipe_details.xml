@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.recipe_details.RecipeDetailsActivity">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.yasser.recipes.ui.recipe_details.RecipeDetailsViewModel" />
+    </data>
+
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@{viewmodel.mealImage}"
+            android:background="@android:color/black"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="250dp"
+            android:alpha="0.9"
+            android:background="@drawable/corner_white_background">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5sp"
+                        android:text="@{viewmodel.recipeMutableLiveData.name}"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/headline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/name"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="@{viewmodel.recipeMutableLiveData.headline}"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="italic" />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/headline"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="5sp"
+                        android:layout_marginRight="10sp"
+                        android:background="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/line"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@{viewmodel.recipeMutableLiveData.description}"
+
+                        />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/mealLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/description"
+                        android:layout_margin="10sp"
+                        app:cardBackgroundColor="@color/base_gray"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/meal_contains"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5sp"
+                                android:text="@{viewmodel.calorisMLD}" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:text="@{viewmodel.carbosMLD}" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:text="@{viewmodel.fatsMLD}" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:text="@{viewmodel.proteinsMLD}" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/mealLayout"
+                        android:layout_margin="10sp"
+                        app:cardBackgroundColor="@color/base_gray"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/meal_prepare"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:text="@{viewmodel.difficultyAndTimeMLD}" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</layout>

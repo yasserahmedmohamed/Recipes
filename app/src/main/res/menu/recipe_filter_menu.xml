@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/cal_filter"
+        android:title="@string/calories" />
+
+
+    <item android:id="@+id/fat_filter"
+        android:title="@string/fat" />
+
+    <item android:id="@+id/no_filter"
+        android:title="@string/no_filter" />
+</menu>

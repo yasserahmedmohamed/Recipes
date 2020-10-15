@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Recipes</string>
+    <string name="calories">Calories</string>
+    <string name="fat">Fat</string>
+    <string name="no_filter">Remove Filter</string>
+
+    <string name="filterBy">Filtered By: </string>
+    <string name="meal_contains">Meal Contains</string>
+    <string name="meal_prepare">Meal Preparation</string>
+
+
+    <string name="details_calories">Calories:</string>
+    <string name="details_carbos">Carbos:</string>
+    <string name="details_fats">Fats:</string>
+    <string name="details_proteins">Proteins:</string>
+
+    <string name="it_is">Difficulty is</string>
+    <string name="easy">easy</string>
+    <string name="mediam">medium</string>
+    <string name="hard">hard</string>
+    <string name="to_make">to make</string>
+    <string name="and_take">and take</string>
+    <string name="minute">minute</string>
+    <string name="no_data_found">No Data Found</string>
+</resources>
