@@ -59,7 +59,5 @@ dependencies {
     kapt "androidx.room:room-compiler:2.1.0-rc01"
     //picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    /// circle image view
-    implementation 'de.hdodenhof:circleimageview:3.0.1'
 
 }

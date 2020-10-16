@@ -159,7 +159,14 @@ class RecipesActivity : AppCompatActivity(), KodeinAware, RecipeItemListener,
 
     override fun OnFilterSelected(filterItem: Int) {
 
-        FilterData(filterItem)
+
+        runOnUiThread(object :Runnable{
+            override fun run() {
+                FilterData(filterItem)
+            }
+
+        })
+
 
     }
 
@@ -190,8 +197,9 @@ class RecipesActivity : AppCompatActivity(), KodeinAware, RecipeItemListener,
             }
 
             R.id.no_filter -> {
+
                 filter_layout.HideWithAnimation()
-                viewModel.SaveFilterItem(R.id.no_filter)
+                viewModel.SaveFilterItem(-1)
                 viewModel.GetRecipesFrmDB()
                 return true
             }

@@ -23,6 +23,9 @@ class SplashActivity : AppCompatActivity() {
    suspend fun OpenMainPage(){
         delay(2000)
        val intent = Intent(this,RecipesActivity::class.java).also {
+           it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+           it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+           it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
            startActivity(it)
        }
     }

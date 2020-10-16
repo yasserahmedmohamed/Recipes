@@ -23,6 +23,9 @@ fun View.HideWithAnimation() {
 
 fun View.showWithAnimation() {
 // Prepare the View for the animation
+
+
+
     if (!this.isShown) {
         this.setVisibility(View.VISIBLE);
         this.setAlpha(0.0f);
