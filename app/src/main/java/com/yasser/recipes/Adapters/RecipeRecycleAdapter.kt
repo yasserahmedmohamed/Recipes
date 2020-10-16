@@ -76,6 +76,7 @@ class RecipeRecycleAdapter(val context: Context,val recipesList: ArrayList<Recip
 
             Picasso.with(context)
                 .load(mRecipe.thumb)
+                .placeholder(R.drawable.loading_gif)
                 .error(R.drawable.error_loading_image)
                 .into(recipe_image)
 
